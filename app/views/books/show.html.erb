@@ -1,7 +1,7 @@
 <div class="container">
       <div class="row">
         <%= render 'books/sidebar', books: @books, user: @book.user,book: @bookn %>
-        <%= render 'layouts/error_messages',user: @book.user %>
+        <%= render 'layouts/error_messages',user: @book.user,book: @bookn %>
         <div class="col-lg-9">
           <h1>Book detail</h1>
           <table class="table table-striped">
@@ -13,13 +13,13 @@
                 <tbody>
                     <tr>
                       <td><%= attachment_image_tag @book.user, :image, :fill, 60, 60, fallback: "no_image.jpg" ,size: '60x60' %>
-                        <br><%= link_to @book.user.name, user_path(current_user),class:"user_1" %>
+                        <br><%= link_to @book.user.name, user_path(current_user),class: "user_1" %>
                       </td>
                       <td><%= @book.title %></td>
                       <td><%= @book.opinion %></td>
                      <% if user_signed_in? %>
-                       <td class = "edit"><%= link_to 'Edit', edit_book_path(@book),class:"edit_book_1" %></td>
-                       <td class = "destroy"><%= link_to 'Destroy', book_path(@book),class:"destroy_book_1" ,method: :delete %></td>
+                       <td class = "edit"><%= link_to 'Edit', edit_book_path(@book),class: "edit_book_1" %></td>
+                       <td class = "destroy"><%= link_to 'Destroy', book_path(@book),class: "destroy_book_1" ,method: :delete %></td>
                      <% end %>
                      </tr>
                 </tbody>

@@ -17,7 +17,7 @@
 
 
             <% if user.id == current_user.id %>
-                    <p><%= link_to "", edit_user_path(user),class:"edit_user_1", class: 'glyphicon glyphicon-wrench btn btn-default col-lg-12' %></p>
+                    <p><%= link_to "", edit_user_path(user),class: 'edit_user_1 glyphicon glyphicon-wrench btn btn-default col-lg-12' %></p>
             <% end %>
 
 
@@ -33,10 +33,10 @@
                 <h1>New book</h1>
 
                 <h4>Title</h4>
-                <%= f.text_field :title,class:"title" %>
+                <%= f.text_field :title,class: "title" %>
 
                 <h4>Opinion</h4>
-                <%= f.text_area :opinion,class:"body" %>
+                <%= f.text_area :opinion,class: "body" %>
 
                 <p><%= f.submit "Create Book" %></p>
 
