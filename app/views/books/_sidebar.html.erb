@@ -1,5 +1,8 @@
 
          <div class="col-lg-3">
+            <%= flash[:notice] %>
+            <%= flash[:alert] %>
+
             <h2>User info</h2>
             <%= attachment_image_tag @user, :image, :fill, 60, 60, fallback: "no_image.jpg",size: '60x60'%>
             <table class="table table-striped">
