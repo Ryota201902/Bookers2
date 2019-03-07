@@ -13,13 +13,13 @@
                 <tbody>
                     <tr>
                       <td><%= attachment_image_tag @book.user, :image, :fill, 60, 60, fallback: "no_image.jpg" ,size: '60x60' %>
-                        <br><%= link_to @book.user.name, user_path(current_user),class: "user_1" %>
+                        <br><%= link_to @book.user.name, user_path(@book.user),class: "user_#{@book.user}" %>
                       </td>
                       <td><%= @book.title %></td>
                       <td><%= @book.opinion %></td>
                      <% if user_signed_in? %>
-                       <td class = "edit"><%= link_to 'Edit', edit_book_path(@book),class: "edit_book_1" %></td>
-                       <td class = "destroy"><%= link_to 'Destroy', book_path(@book),class: "destroy_book_1" ,method: :delete %></td>
+                       <td class = "edit"><%= link_to 'Edit', edit_book_path(@book.id),class: "edit_book_#{@book.id}" %></td>
+                       <td class = "destroy"><%= link_to 'Destroy', book_path(@book),class: "destroy_book_#{@book}" ,method: :delete %></td>
                      <% end %>
                      </tr>
                 </tbody>
