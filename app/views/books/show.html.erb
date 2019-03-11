@@ -19,7 +19,7 @@
                       <td><%= @book.opinion %></td>
                      <% if current_user.id == @book.user.id %>
                        <td class = "edit"><%= link_to 'Edit', edit_book_path(@book.id),class: "edit_book_#{@book.id}" %></td>
-                       <td class = "destroy"><%= link_to 'Destroy', book_path(@book),class: "destroy_book_#{@book}" ,method: :delete %></td>
+                       <td class = "destroy"><%= link_to 'Destroy', book_path(@book.id),class: "destroy_book_#{@book.id}" ,method: :delete %></td>
                      <% end %>
                      </tr>
                 </tbody>
